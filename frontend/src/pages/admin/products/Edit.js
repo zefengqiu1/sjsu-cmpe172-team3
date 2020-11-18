@@ -98,6 +98,17 @@ function Edit(props) {
             initialValue: currentData.price
           })(<Input placeholder="Please fill in product price" />)}
         </Form.Item>
+        <Form.Item label="Inventory">
+          {getFieldDecorator("inventory", {
+            rules: [
+              {
+                required: true,
+                message: "Please fill in inventory"
+              }
+            ],
+            initialValue: currentData.inventory
+          })(<Input placeholder="Please fill in inventory" />)}
+        </Form.Item>
         <Form.Item name={['user', 'introduction']} label="Description">
         {getFieldDecorator("description", {
             initialValue: currentData.description
