@@ -4,7 +4,7 @@ export default (state = { list: [], page: 1, total: 0 }, action) => {
       return {
         ...state,
         list: action.payload.products,
-        page: action.payload.page,
+        page: action.payload.pages,
         total: action.payload.totalCount
       };
     default:

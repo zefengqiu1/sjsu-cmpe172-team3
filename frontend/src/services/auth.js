@@ -15,5 +15,5 @@ export function registerApi(user) {
 }
 
 export function listUserApi(page = 1) {
-  return get("/api/v1/admin/users", { page, per: 2 });
+  return get("/api/v1/auth/users", { page, per: 2 });
 }

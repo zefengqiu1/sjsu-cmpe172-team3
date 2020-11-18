@@ -49,7 +49,7 @@ public class BackendApplication {
         return jsonObject;
     }
 
-    @GetMapping("/admin/users")//http://localhost:8081/api/v1/admin/users?page=1&per=2
+    @GetMapping("/auth/users")//http://localhost:8081/api/v1/admin/users?page=1&per=2
     // getall
     public JSONObject ListUsers(@RequestParam int page,@RequestParam int per) {
         int _page=0;

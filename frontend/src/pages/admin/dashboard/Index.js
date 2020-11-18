@@ -3,7 +3,6 @@ import { Row, Col, Card, Statistic, Icon } from "antd";
 //import { loadProduct } from "../../../store/actions/product";
 //{ useEffect }
 function Index(props) {
-  
   return (
     <div>
       <Card title="Data Summary" bordered={false}>
