@@ -20,6 +20,13 @@ public class BackendApplication {
     @Autowired
     private userRepository userRepository;
 
+    @GetMapping("/admin/productnum")
+    public JSONObject NumProduct()
+    {
+    	int num = productRepository.findAll().size();
+        return (JSONObject) JSONObject.toJSON(num);
+    }
+    
     @GetMapping("/admin/products")//http://localhost:8081/api/v1/admin/products?page=1&per=2
     // getall
     public JSONObject ListProduct(@RequestParam int page,@RequestParam int per) {
@@ -42,6 +49,28 @@ public class BackendApplication {
         return jsonObject;
     }
 
+    @GetMapping("/admin/users")//http://localhost:8081/api/v1/admin/users?page=1&per=2
+    // getall
+    public JSONObject ListUsers(@RequestParam int page,@RequestParam int per) {
+        int _page=0;
+        int _per=0;
+        if (page <= 0) {
+            _page = 1;
+        }
+        if (per <= 0) {
+            _per = 10;
+        }
+        System.out.println("FindAllUsers");
+
+        List<User> list = userRepository.findAll();
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("totalCount", list.size());
+        jsonObject.put("pages", 1);
+        jsonObject.put("users", list);
+        return jsonObject;
+    }
+    
     //http://localhost:8081/api/v1/admin/products
     //additem
     @PostMapping("/admin/products")
@@ -123,6 +152,49 @@ public class BackendApplication {
 
     }
 
+    @PostMapping("/auth/register")
+    @ResponseBody
+    public void Register(@RequestBody User object) {
+        System.out.println("register");
+        JSONObject jsonObject = new JSONObject();
+        List<User> list = userRepository.findAll();
+        boolean duplicate = false;
+        for(User user:list) {
+        	System.out.println(user.getUsername());
+        	if(user.getUsername() != null)
+        	{
+        		if(user.getUsername() == object.getUsername()){
+        			duplicate = true;
+        		}
+        	}
+        }
+        boolean success=false;
+        if(object.getPassword() != "" && object.getUsername() != "" && !duplicate)
+        {
+        	userRepository.save(object);
+        	success = true;
+        }
+        if(success) {
+            System.out.println("registration success");
+            jsonObject.put("code", "201");
+            jsonObject.put("message", "register successful");
+            jsonObject.put("token", "admin");
+
+        }
+        else if(duplicate)
+        {
+            System.out.println("registration fail due to duplicate");
+            jsonObject.put("code", "401");
+            jsonObject.put("message", "register fail due to existing user");
+            jsonObject.put("token", "admin");
+        }
+        else {
+            System.out.println("registration fail due to null");
+            jsonObject.put("code", "402");
+            jsonObject.put("message", "register fail");
+        }
+
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(BackendApplication.class, args);

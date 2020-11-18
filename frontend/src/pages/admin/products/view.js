@@ -20,7 +20,7 @@ function View(props) {
     
     const columns = [
         {
-            title: "description",
+            title: "Description",
             dataIndex: "description"
           }
     ]

@@ -43,6 +43,10 @@ function List(props) {
       dataIndex: "price"
     },
     {
+      title: "Inventory",
+      dataIndex: "inventory"
+    },
+    {
       title: "Operation",
       render: (txt, record, index) => {
         return (

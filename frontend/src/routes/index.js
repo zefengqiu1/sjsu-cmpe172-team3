@@ -3,7 +3,9 @@ import Index from "../pages/admin/dashboard/Index";
 import List from "../pages/admin/products/List";
 import Edit from "../pages/admin/products/Edit";
 import PageNotFound from "../pages/PageNotFound";
-import View from "../pages/admin/products/view"
+import View from "../pages/admin/products/view";
+import Register from "../pages/admin/register/Register";
+import Management from "../pages/admin/management/management";
 
 export const mainRoutes = [
   {
@@ -31,6 +33,20 @@ export const adminRoutes = [
     exact: true,
     title: "Product Management",
     icon: "shop"
+  },
+  {
+    path: "/admin/management",
+    component: Management,
+    isShow: true,
+    title: "Manage Users",
+    icon: "user"
+  },
+  {
+    path: "/admin/register",
+    component: Register,
+    isShow: true,
+    title: "Authorize New Users",
+    icon: "user"
   },
   {
     path: "/admin/products/edit/:id?",

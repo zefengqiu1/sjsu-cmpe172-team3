@@ -2,9 +2,12 @@ package com.example.backend;
 
 import javax.persistence.*;
 
+import lombok.Data;
+
 
 @Entity
 @Table(name = "product")
+@Data
 public class product {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Id
