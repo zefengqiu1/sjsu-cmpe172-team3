@@ -12,16 +12,15 @@ public class product {
     private String name;
     private int price;
     private String description;
+    private int inventory;
 
-    public int getStock() {
-        return stock;
+    public int getInventory() {
+        return inventory;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    public void setInventory(int inventory) {
+        this.inventory = inventory;
     }
-
-    private int stock;
 
     public long getId() {
         return id;

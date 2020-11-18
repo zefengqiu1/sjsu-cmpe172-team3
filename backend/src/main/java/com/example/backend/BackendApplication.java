@@ -51,6 +51,8 @@ public class BackendApplication {
         System.out.println(product.getName());
         System.out.println(product.getPrice());
         System.out.println(product.getDescription());
+        System.out.println(product.getInventory());
+
         productRepository.save(product);
     }
 
@@ -77,6 +79,7 @@ public class BackendApplication {
         product old = productRepository.getOne(id);
         old.setName(object.get("name"));
         old.setPrice(Integer.valueOf(object.get("price")));
+        old.setInventory(Integer.valueOf(object.get("inventory")));
         if(object.get("description")!=null) {
             old.setDescription(object.get("description"));
         }
