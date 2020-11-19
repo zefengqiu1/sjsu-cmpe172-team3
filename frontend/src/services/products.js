@@ -7,11 +7,6 @@ import { get, post, put, del } from "../utils/request";
 export function listApi(page = 1) {
   return get("/api/v1/admin/products", { page, per: 2 });
 }
-
-export function getNum(data)
-{
-  return get("/api/v1/admin/productnum", data);
-}
 /**
  * create data
  * @param {*} data

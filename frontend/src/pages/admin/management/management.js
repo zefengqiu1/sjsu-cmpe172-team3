@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Card, Table, Button, Popconfirm } from "antd";
 import { connect } from "react-redux";
 import { loadUsers } from "../../../store/actions/users";
+import { delUser } from "../../../services/auth";
 
 function Management(props) {
   //console.log(props);
@@ -36,10 +37,6 @@ function Management(props) {
       dataIndex: "username"
     },
     {
-      title: "Password",
-      dataIndex: "password"
-    },
-    {
       title: "Operation",
       render: (txt, record, index) => {
         return (
@@ -49,7 +46,7 @@ function Management(props) {
               size="small"
               onClick={() => {
                 // jump to edit page，id as para
-                // props.history.push(`/admin/products/edit/${record.id}`);
+                props.history.push(`/admin/users/edit/${record.id}`);
               }}
             >
               Update
@@ -57,13 +54,13 @@ function Management(props) {
             <Popconfirm
               title="Confirm"
               onCancel={() => console.log("Cancel")}
-              // onConfirm={() => {
-              //   // wanna cancel??
-              //   // api call
-              //   delOne(record.id).then(res => {
-              //     loadData();
-              //   });
-              // }}
+              onConfirm={() => {
+                // wanna cancel??
+                // api call
+                delUser(record.id).then(res => {
+                  loadData();
+                });
+              }}
             >
               <Button style={{ margin: "0 1rem" }} type="danger" size="small">
                 Delete
@@ -73,7 +70,7 @@ function Management(props) {
               <Button style={{ margin: "0 1rem" }} type="primary" size="small"
               onClick={() => {
                 // jump to edit page，id as para
-                // props.history.push(`/admin/products/view/${record.id}`);
+                props.history.push(`/admin/users/view/${record.id}`);
               }}>
                 View
               </Button>
@@ -90,7 +87,7 @@ function Management(props) {
         rowKey="id"
         pagination={{
           total,
-          defaultPageSize: 2,
+          defaultPageSize: 5,
           onChange: p => {
             props.dispatch(loadUsers({ page: p }));
           }

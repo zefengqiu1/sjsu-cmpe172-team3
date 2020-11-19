@@ -25,7 +25,7 @@ function Register(props) {
                 message.success(res.message);
                 //console.log(res.token)
                 setToken(res.token);
-                props.history.push("/admin/register");
+                props.history.push("/admin/");
               } else {
                 message.info(res.message);
               }

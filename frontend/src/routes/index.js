@@ -9,6 +9,8 @@ import Management from "../pages/admin/management/management";
 import Order from "../pages/admin/orders/Order";
 import EditOrder from "../pages/admin/orders/EditOrder";
 import ViewOrder from "../pages/admin/orders/ViewOrder";
+import EditUser from "../pages/admin/management/EditUser";
+import ViewUser from "../pages/admin/management/ViewUser";
 
 export const mainRoutes = [
   {
@@ -65,6 +67,11 @@ export const adminRoutes = [
     isShow: false
   },
   {
+    path: "/admin/users/edit/:id?",
+    component: EditUser,
+    isShow: false
+  },
+  {
     path: "/admin/products/view/:id?",
     component: View,
     isShow: false,
@@ -79,5 +86,12 @@ export const adminRoutes = [
     path: "/admin/orders/viewOrder/:id?",
     component: ViewOrder,
     isShow: false,
+  },
+  
+  {
+    path: "/admin/users/view/:id?",
+    component: ViewUser,
+    isShow: false,
+
   }
 ];
