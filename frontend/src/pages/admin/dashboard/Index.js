@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Statistic, Icon } from "antd";
+import { loadProduct } from "../../../store/actions/product";
+import { connect } from "react-redux";
 //import { loadProduct } from "../../../store/actions/product";
 //{ useEffect }
 function Index(props) {
+  const { total, page, list } = props;
+
+  useEffect(() => {
+    props.dispatch(
+      loadProduct({
+        page: 1
+      })
+    );
+  },[]);
+
   return (
     <div>
       <Card title="Data Summary" bordered={false}>
@@ -11,7 +23,7 @@ function Index(props) {
             <Card title="Total Product" color="red">
               <Statistic
                 title="Total product"
-                value="80"
+                value= {total}
                 prefix={<Icon type="arrow-up" />}
               ></Statistic>
             </Card>
@@ -23,4 +35,4 @@ function Index(props) {
   );
 }
 
-export default Index;
+export default connect(state => state.product)(Index);
