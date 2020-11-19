@@ -64,7 +64,7 @@ public class OrderController {
     ///api/v1/admin/orders/{id}
     //get request
     //getbyid
-    @GetMapping("/admin/order/{id}")
+    @GetMapping("/admin/orders/{id}")
     public JSONObject viewOrder(@PathVariable long id) {
         order old = orderRepository.getOne(id);
         return (JSONObject) JSONObject.toJSON(old);

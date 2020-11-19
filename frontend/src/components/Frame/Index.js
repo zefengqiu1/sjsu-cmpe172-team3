@@ -34,7 +34,7 @@ function Index(props) {
         }}
       >
         <div className="logo">
-          <img src={logo} alt="logo" width="100px" height="70px" />
+          <img src={logo} alt="logo" width="70px" height="60px" />
         </div>
         <Dropdown overlay={popMenu}>
           <div>

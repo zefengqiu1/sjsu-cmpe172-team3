@@ -76,14 +76,14 @@ function EditOrder(props) {
           })(<Input placeholder="Please fill in order name" />)}
         </Form.Item>
         <Form.Item label="Supplier">
-          {getFieldDecorator("Supplier", {
+          {getFieldDecorator("supplier", {
             rules: [
               {
                 required: true,
                 message: "Please fill in supplier"
               },
             ],
-            initialValue: currentData.price
+            initialValue: currentData.supplier
           })(<Input placeholder="Please fill in product supplier" />)}
         </Form.Item>
         <Form.Item label="Count">
@@ -94,10 +94,10 @@ function EditOrder(props) {
                 message: "Please fill in count of product being ordered"
               },
             ],
-            initialValue: currentData.inventory
+            initialValue: currentData.count
           })(<Input placeholder="Please fill in order count" />)}
         </Form.Item>
-        <Form.Item name={['user', 'introduction']} label="Description">
+        <Form.Item label="Description">
         {getFieldDecorator("description", {
             initialValue: currentData.description
           })(<Input.TextArea />)}

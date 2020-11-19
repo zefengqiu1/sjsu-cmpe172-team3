@@ -13,7 +13,6 @@ public class order {
     private long id;
     private String name;
     private String supplier;
-    @Column(name="orderCount")
     private int count;
     private String description;
 	public long getId() {
