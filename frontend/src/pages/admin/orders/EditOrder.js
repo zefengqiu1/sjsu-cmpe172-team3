@@ -18,15 +18,6 @@ function EditOrder(props) {
     }
   },[props.match.params.id]);
 
-
-  const priceValidate = (rule, value, callback) => {
-    if (value * 1 > 100) {
-      callback("need less than 100");
-    } else {
-      callback();
-    }
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -91,9 +82,6 @@ function EditOrder(props) {
                 required: true,
                 message: "Please fill in supplier"
               },
-              {
-                validator: priceValidate
-              }
             ],
             initialValue: currentData.price
           })(<Input placeholder="Please fill in product supplier" />)}

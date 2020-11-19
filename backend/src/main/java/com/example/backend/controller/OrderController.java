@@ -1,9 +1,10 @@
-package com.example.backend;
+package com.example.backend.controller;
 
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,10 +16,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.backend.orderRepository;
+import com.example.backend.model.order;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin("*")
 public class OrderController {
+	
 	@Autowired
 	private com.example.backend.orderRepository orderRepository;
 	
