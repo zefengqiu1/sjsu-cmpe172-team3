@@ -6,6 +6,8 @@ import PageNotFound from "../pages/PageNotFound";
 import View from "../pages/admin/products/view";
 import Register from "../pages/admin/register/Register";
 import Management from "../pages/admin/management/management";
+import EditUser from "../pages/admin/management/EditUser";
+import ViewUser from "../pages/admin/management/ViewUser";
 
 export const mainRoutes = [
   {
@@ -54,8 +56,17 @@ export const adminRoutes = [
     isShow: false
   },
   {
+    path: "/admin/users/edit/:id?",
+    component: EditUser,
+    isShow: false
+  },
+  {
     path: "/admin/products/view/:id?",
     component: View,
+    isShow: false,
+
+    path: "/admin/users/view/:id?",
+    component: ViewUser,
     isShow: false,
 
   }

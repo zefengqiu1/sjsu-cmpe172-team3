@@ -19,13 +19,6 @@ public class BackendApplication {
 
     @Autowired
     private userRepository userRepository;
-
-    @GetMapping("/admin/productnum")
-    public JSONObject NumProduct()
-    {
-    	int num = productRepository.findAll().size();
-        return (JSONObject) JSONObject.toJSON(num);
-    }
     
     @GetMapping("/admin/products")//http://localhost:8081/api/v1/admin/products?page=1&per=2
     // getall
@@ -49,7 +42,7 @@ public class BackendApplication {
         return jsonObject;
     }
 
-    @GetMapping("/auth/users")//http://localhost:8081/api/v1/admin/users?page=1&per=2
+    @GetMapping("/auth/users")//http://localhost:8081/api/v1/auth/users?page=1&per=2
     // getall
     public JSONObject ListUsers(@RequestParam int page,@RequestParam int per) {
         int _page=0;
@@ -95,6 +88,14 @@ public class BackendApplication {
         return (JSONObject) JSONObject.toJSON(old);
 
     }
+    
+    @GetMapping("/auth/users/{id}")
+    public JSONObject viewUser(@PathVariable long id) {
+        //System.out.println("getbyid");
+        User old = userRepository.getOne(id);
+        return (JSONObject) JSONObject.toJSON(old);
+
+    }
 
     ///api/v1/admin/products/
     //update item
@@ -115,6 +116,60 @@ public class BackendApplication {
         //productRepository.
         productRepository.save(old);
     }
+    
+    ///api/v1/auth/users/
+    //update item
+    @PutMapping("/auth/users/{id}")
+    public JSONObject updateUser(@PathVariable long id,@RequestBody Map<String, String> object) {
+    	
+        System.out.println("update");
+    	
+        JSONObject jsonObject = new JSONObject();
+        
+        User old = userRepository.getOne(id);
+        
+        List<User> list = userRepository.findAll();
+        int index = 0;
+        for(User user: list)
+        {
+    		if(user.getUsername().equalsIgnoreCase(old.getUsername())){
+    			index = list.indexOf(user);
+    		}
+        }
+        list.remove(index);
+        boolean duplicate = false;
+        for(User user:list) {
+        	if(user.getUsername() != null)
+        	{
+    			System.out.println(user.getUsername() + ", " + object.get("username"));
+        		if(user.getUsername().equalsIgnoreCase(object.get("username"))){
+        			duplicate = true;
+        			break;
+        		}
+        	}
+        }
+        if(duplicate == false)
+        {
+            old.setUsername(object.get("username"));
+            old.setPassword(object.get("password"));
+            //productRepository.
+            userRepository.save(old);
+        }
+        if(duplicate == false) {
+            System.out.println("update success");
+            jsonObject.put("code", "202");
+            jsonObject.put("message", "Update Successful");
+            jsonObject.put("token", "admin");
+
+        }
+        else {
+            System.out.println("Update fail due to duplicate");
+            jsonObject.put("code", "403");
+            jsonObject.put("message", "Update failed due to existing username");
+        }
+        return jsonObject;
+    }
+
 
     // DELETE http://localhost:8081/api/v1/admin/products/1
     //delteitem
@@ -122,6 +177,14 @@ public class BackendApplication {
     public void deleteProduct(@PathVariable long id) {
         System.out.println(id);
         productRepository.deleteById(id);
+    }
+    
+    // DELETE http://localhost:8081/api/v1/auth/users/1
+    //delete item
+    @DeleteMapping("/auth/users/{id}")
+    public void deleteUser(@PathVariable long id) {
+        System.out.println(id);
+        userRepository.deleteById(id);
     }
 
 
@@ -154,45 +217,37 @@ public class BackendApplication {
 
     @PostMapping("/auth/register")
     @ResponseBody
-    public void Register(@RequestBody User object) {
+    public JSONObject Register(@RequestBody User object) {
         System.out.println("register");
         JSONObject jsonObject = new JSONObject();
         List<User> list = userRepository.findAll();
         boolean duplicate = false;
         for(User user:list) {
-        	System.out.println(user.getUsername());
         	if(user.getUsername() != null)
         	{
-        		if(user.getUsername() == object.getUsername()){
+    			System.out.println(user.getUsername() + ", " + object.getUsername());
+        		if(user.getUsername().equalsIgnoreCase(object.getUsername())){
         			duplicate = true;
         		}
         	}
         }
-        boolean success=false;
-        if(object.getPassword() != "" && object.getUsername() != "" && !duplicate)
+        if(duplicate == false)
         {
         	userRepository.save(object);
-        	success = true;
         }
-        if(success) {
+        if(duplicate == false) {
             System.out.println("registration success");
             jsonObject.put("code", "201");
-            jsonObject.put("message", "register successful");
+            jsonObject.put("message", "Register Successful");
             jsonObject.put("token", "admin");
 
         }
-        else if(duplicate)
-        {
-            System.out.println("registration fail due to duplicate");
-            jsonObject.put("code", "401");
-            jsonObject.put("message", "register fail due to existing user");
-            jsonObject.put("token", "admin");
-        }
         else {
-            System.out.println("registration fail due to null");
+            System.out.println("registration fail due to duplicate");
             jsonObject.put("code", "402");
-            jsonObject.put("message", "register fail");
+            jsonObject.put("message", "Register failed due to existing username");
         }
+        return jsonObject;
 
     }
 

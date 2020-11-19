@@ -107,7 +107,7 @@ function List(props) {
         rowClassName={record => (record.onSale ? "" : "bg-red")}
         pagination={{
           total,
-          defaultPageSize: 2,
+          defaultPageSize: 5,
           onChange: p => {
             props.dispatch(loadProduct({ page: p }));
           }
