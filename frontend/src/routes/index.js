@@ -6,6 +6,9 @@ import PageNotFound from "../pages/PageNotFound";
 import View from "../pages/admin/products/view";
 import Register from "../pages/admin/register/Register";
 import Management from "../pages/admin/management/management";
+import Order from "../pages/admin/orders/Order";
+import EditOrder from "../pages/admin/orders/EditOrder";
+import ViewOrder from "../pages/admin/orders/ViewOrder";
 
 export const mainRoutes = [
   {
@@ -35,6 +38,14 @@ export const adminRoutes = [
     icon: "shop"
   },
   {
+    path:"/admin/orders",
+    component: Order,
+    isShow: true,
+    exact: true,
+    title: "Order Forms",
+    icon: "form"
+  },
+  {
     path: "/admin/management",
     component: Management,
     isShow: true,
@@ -58,5 +69,15 @@ export const adminRoutes = [
     component: View,
     isShow: false,
 
+  },
+  {
+    path: "/admin/orders/editOrder/:id?",
+    component: EditOrder,
+    isShow: false
+  },
+  {
+    path: "/admin/orders/viewOrder/:id?",
+    component: ViewOrder,
+    isShow: false,
   }
 ];
