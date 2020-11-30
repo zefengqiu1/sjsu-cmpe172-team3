@@ -15,5 +15,7 @@ frontend :http://localhost:3000
 
 backend:http://localhost:8081
 
+deployed application: http://inventoryapp-env.eba-w5wqhddj.us-east-1.elasticbeanstalk.com/
+
 
 
