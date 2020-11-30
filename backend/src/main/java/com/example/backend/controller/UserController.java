@@ -165,24 +165,39 @@ public class UserController {
     			System.out.println(user.getUsername() + ", " + object.getUsername());
         		if(user.getUsername().equalsIgnoreCase(object.getUsername())){
         			duplicate = true;
+        			break;
         		}
         	}
         }
-        if(duplicate == false)
+        boolean invalid = false;
+        if(object.getUsername().trim().isEmpty() || object.getUsername().contains(" ") || object.getUsername().length() <= 3)
         {
-        	userRepository.save(object);
+        	invalid = true;
         }
-        if(duplicate == false) {
+        if(duplicate == false && invalid == false) {
+        	userRepository.save(object);
             System.out.println("registration success");
             jsonObject.put("code", "201");
             jsonObject.put("message", "Register Successful");
             jsonObject.put("token", "admin");
 
         }
-        else {
+        else if(duplicate == true){
             System.out.println("registration fail due to duplicate");
             jsonObject.put("code", "402");
             jsonObject.put("message", "Register failed due to existing username");
+        }
+        else if(invalid == true)
+        {
+            System.out.println("registration fail");
+            jsonObject.put("code", "404");
+            jsonObject.put("message", "Unable to use this username due to length or invalid characters!");
+        }
+        else
+        {
+            System.out.println("registration fail");
+            jsonObject.put("code", "405");
+            jsonObject.put("message", "Registration Fail! Invalid Username!");
         }
         return jsonObject;
 
