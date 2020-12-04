@@ -14,7 +14,7 @@ Enterprise Software - CMPE172/ Fall 2020
 
 # Table Of Content
 
-* [Projection Introduction](#Projection Introduction)
+* [Projection Introduction](#Project Introduction)
 * [Sample Demo Screenshots](#Sample Demo Screenshots)
 * [Folder structure](#Folder structure)
 * [Install](#Install)
@@ -28,19 +28,19 @@ Enterprise Software - CMPE172/ Fall 2020
 
 # Sample Demo Screenshots 
 
-<img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/login.png" style="zoom:50%;" />
+<img src="./images/login.png" style="zoom:50%;" />
 
 
 
-<img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/dashboard.png" style="zoom:50%;" />
+<img src="./images/dashboard.png" style="zoom:50%;" />
 
-<img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/product management.png" style="zoom:50%;" />
+<img src="./images/product management.png" style="zoom:50%;" />
 
-<img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/order form.png" style="zoom:50%;" />
+<img src="./images/order form.png" style="zoom:50%;" />
 
-<img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/manage users.png" style="zoom:50%;" />
+<img src="./images/manage users.png" style="zoom:50%;" />
 
-<img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/authorize new users.png" style="zoom:50%;" />
+<img src="./images/authorize new users.png" style="zoom:50%;" />
 
 # Folder structure
 
@@ -93,26 +93,27 @@ npm run start
 
 * System Diagram
 
-  <img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/system architecture.png" style="zoom:50%;" />
+  <img src="./images/system architecture.png" style="zoom:50%;" />
 
 * Class
 
-  <img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/class.png" style="zoom:50%;" />
+  <img src="./images/class.png" style="zoom:50%;" />
 
 * sequence
 
-  <img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/sequence diagram.png" style="zoom:50%;" />
+  <img src="./images/sequence diagram.png" style="zoom:50%;" />
 
 * Db schema
 
   * user
 
-    <img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/user.png" style="zoom:50%;" />
+    <img src="./images/user.png" style="zoom:50%;" />
 
   * product
 
-    <img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/product.png" style="zoom:50%;" />
+    <img src="./images/product.png" style="zoom:50%;" />
 
   * order
 
-    <img src="/Users/Zefeng/Desktop/172project/sjsu-cmpe172-team3/images/order.png" style="zoom:50%;" />
+    <img src="./images/order.png" style="zoom:50%;" />
+
