@@ -2,7 +2,7 @@
 
 San Jose State University
 
-# COURSE
+# Course
 
 Enterprise Software - CMPE172 / Fall 2020
 
