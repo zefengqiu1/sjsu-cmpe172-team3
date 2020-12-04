@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-backend/src/main/resources/dev.properties
+/backend/src/main/resources/dev.properties
 
 ### STS ###
 .apt_generated
