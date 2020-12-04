@@ -4,7 +4,7 @@ San Jose State University
 
 # COURSE
 
-Enterprise Software - CMPE172/ Fall 2020 
+Enterprise Software - CMPE172 / Fall 2020
 
 # Team Members
 
@@ -17,28 +17,23 @@ Enterprise Software - CMPE172/ Fall 2020
 * [Project Introduction](#Project-Introduction)
 * [Sample Demo Screenshots](#Sample-Demo-Screenshots)
 * [Folder structure](#Folder-structure)
-* [Install](#Install)
-* [Diagram](#Diagram)
-* [License](#license)
+* [Local Installation Instructions](#Local-Installation-Instructions)
+* [Diagrams](#Diagrams)
 * [Links](#links)
 
 
 
 # Project Introduction
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-typo3/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-typo3/?branch=master)
-
 :star: Star us on GitHub — it helps!
 
-Inventory Manager is  ...
+Inventory Tracker is a project created to get hands on experience with building enterprise software. The program is geared towards store owners to help with inventory management. Users may keep track of their product inventory, set up supply orders, and give access to employees. Database operations such as creating, reading, updating, and deleting are implemented. The project was built using the SpringBoot framework, React JSX, and AWS RDS. It uses EC2 and Docker for deployment.
 
 
 
 # Sample Demo Screenshots 
 
 <img src="./images/login.png" style="zoom:50%;" />
-
-
 
 <img src="./images/dashboard.png" style="zoom:50%;" />
 
@@ -78,28 +73,27 @@ Inventory Manager is  ...
     └── sequence\ diagram.png
 ```
 
-# Install
+# Local Installation Instructions
 
-prerequisite:
+Prerequisites:
 
-Java jdk 8
+- Java jdk > 14
+- install NPM (https://www.npmjs.com/get-npm)
+- mysql database > 8.0
 
-install NPM (https://www.npmjs.com/get-npm)
+ 
+To start the backend:
+- run DemoApplication.java
 
-mysql database > 8.0
+To start the frontend:
+- open new terminal instance
+- run the following commnads to get started:
+    - cd .\frontend\
+    - cd .\app\
+    - npm install (this will take some time to install all the necessary dependencies)
+    - npm run start
 
-
-
-Start backend:
-run DemoApplication.java
-
-Start frontend:
-open new terminal
-run following commnads to get started:
-cd .\frontend\
-cd .\app\
-npm install(will take some time as it installs all the dependencies required by the application)
-npm run start
+*The program should be running on http://localhost:5000 if set up correctly
 
 # Diagram
 
@@ -107,15 +101,15 @@ npm run start
 
   <img src="./images/system architecture.png" style="zoom:50%;" />
 
-* Class
+* Class Diagram
 
   <img src="./images/class.png" style="zoom:50%;" />
 
-* sequence
+* Sequence Diagram
 
   <img src="./images/sequence diagram.png" style="zoom:50%;" />
 
-* Db schema
+* DB Schema
 
   * user
 
@@ -128,11 +122,6 @@ npm run start
   * order
 
     <img src="./images/order.png" style="zoom:50%;" />
-
-## License
-
-The Inventory Manager is licensed under the terms of the GPL Open Source
-license and is available for free.
 
 ## Links
 
