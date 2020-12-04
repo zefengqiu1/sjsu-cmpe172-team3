@@ -88,8 +88,7 @@ To start the backend:
 To start the frontend:
 - open a new terminal instance
 - run the following commnads to get started:
-    - cd .\frontend\
-    - cd .\app\
+    - cd .\backend\src\main\frontend\
     - npm install (this will take some time to install all the necessary dependencies)
     - npm run start
 
