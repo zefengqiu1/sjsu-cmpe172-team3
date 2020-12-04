@@ -12,19 +12,27 @@ Enterprise Software - CMPE172/ Fall 2020
 * Kevin Luu
 * Eager Yu
 
-# Table Of Content
+# Table of content
 
-* [Projection Introduction](#Project Introduction)
-* [Sample Demo Screenshots](#Sample Demo Screenshots)
-* [Folder structure](#Folder structure)
+* [Projection Introduction](#Project-Introduction)
+* [Sample Demo Screenshots](#Sample-Demo-Screenshots)
+* [Folder structure](#Folder-structure)
 * [Install](#Install)
 * [Diagram](#Diagram)
+* [License](#license)
+* [Links](#links)
 
 
 
 # Project Introduction
 
-...
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-typo3/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-typo3/?branch=master)
+
+:star: Star us on GitHub — it helps!
+
+Inventory Manager is  ...
+
+
 
 # Sample Demo Screenshots 
 
@@ -78,6 +86,10 @@ Java jdk 8
 
 install NPM (https://www.npmjs.com/get-npm)
 
+mysql database > 8.0
+
+
+
 Start backend:
 run DemoApplication.java
 
@@ -116,4 +128,14 @@ npm run start
   * order
 
     <img src="./images/order.png" style="zoom:50%;" />
+
+## License
+
+The Inventory Manager is licensed under the terms of the GPL Open Source
+license and is available for free.
+
+## Links
+
+* [Web site](https://aimeos.org/integrations/typo3-shop-extension/)
+* [Video](https://aimeos.org/docs/TYPO3)
 
