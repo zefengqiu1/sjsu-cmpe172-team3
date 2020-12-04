@@ -10,11 +10,11 @@ Enterprise Software - CMPE172/ Fall 2020
 
 * Zefeng Qiu
 * Kevin Luu
-* Eager Yu
+* Edgar Yu
 
 # Table of content
 
-* [Projection Introduction](#Project-Introduction)
+* [Project Introduction](#Project-Introduction)
 * [Sample Demo Screenshots](#Sample-Demo-Screenshots)
 * [Folder structure](#Folder-structure)
 * [Install](#Install)
@@ -136,6 +136,6 @@ license and is available for free.
 
 ## Links
 
-* [Web site](https://aimeos.org/integrations/typo3-shop-extension/)
+* [Web Application](ec2-3-220-67-171.compute-1.amazonaws.com)
 * [Video](https://aimeos.org/docs/TYPO3)
 
