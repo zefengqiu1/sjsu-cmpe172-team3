@@ -27,7 +27,7 @@ Enterprise Software - CMPE172 / Fall 2020
 
 :star: Star us on GitHub — it helps!
 
-Inventory Tracker is a project created to get hands on experience with building enterprise software. The program is geared towards store owners to help with inventory management. Users may keep track of their product inventory, set up supply orders, and give access to employees. Database operations such as creating, reading, updating, and deleting are implemented. The project was built using the SpringBoot framework, React JSX, and AWS RDS. It uses EC2 and Docker for deployment.
+Inventory Tracker is a project created to get hands on experience with building enterprise software. The program is geared towards store owners to help with inventory management. Users may keep track of their product inventory, set up supply orders, and give access to employees. Database operations such as creating, reading, updating, and deleting are implemented for all components. The project was built using the SpringBoot framework, React JSX, and AWS RDS. It uses EC2 and Docker for deployment.
 
 
 
