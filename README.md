@@ -86,7 +86,7 @@ To start the backend:
 - run DemoApplication.java
 
 To start the frontend:
-- open new terminal instance
+- open a new terminal instance
 - run the following commnads to get started:
     - cd .\frontend\
     - cd .\app\
