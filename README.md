@@ -126,5 +126,5 @@ To start the frontend:
 ## Links
 
 * [Web Application](ec2-3-220-67-171.compute-1.amazonaws.com)
-* [Video](https://aimeos.org/docs/TYPO3)
+* [Video](https://www.youtube.com/watch?v=-8j8O_rk6ZQ&)
 
