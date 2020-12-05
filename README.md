@@ -83,6 +83,12 @@ Prerequisites:
 
  
 To start the backend:
+- enter database credentials in dev.properties in ./backend/src/main/resources/
+    - if dev.properties does not exist, create in this format:
+        MY_DB.NAME=
+        MY_DB.USER=
+        MY_DB.PASSWORD=
+        
 - run DemoApplication.java
 
 To start the frontend:
@@ -91,6 +97,17 @@ To start the frontend:
     - cd .\backend\src\main\frontend\
     - npm install (this will take some time to install all the necessary dependencies)
     - npm run start
+
+*The program should be running on http://localhost:5000 if set up correctly
+------------------
+
+Build with Maven:
+*IF "backend-0.0.1-SNAPSHOT.jar" ALREADY PRESENT, SKIP FIRST TWO STEPS
+
+- In Eclipse, run Maven install on the project.
+- In generated target folder, verify "backend-0.0.1-SNAPSHOT.jar" creation
+- Enter the directory containing "backend-0.0.1-SNAPSHOT.jar" with terminal
+- enter the command: java -jar backend-0.0.1-SNAPSHOT.jar
 
 *The program should be running on http://localhost:5000 if set up correctly
 
