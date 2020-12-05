@@ -85,9 +85,14 @@ Prerequisites:
 To start the backend:
 - enter database credentials in dev.properties in ./backend/src/main/resources/
     - if dev.properties does not exist, create in this format:
+    -----
         MY_DB.NAME=
+        
         MY_DB.USER=
+        
         MY_DB.PASSWORD=
+    -----
+        
         
 - run DemoApplication.java
 
