@@ -12,7 +12,7 @@ Enterprise Software - CMPE172 / Fall 2020
 * Kevin Luu
 * Edgar Yu
 
-# Table of content
+# Table of Contents
 
 * [Project Introduction](#Project-Introduction)
 * [Sample Demo Screenshots](#Sample-Demo-Screenshots)
@@ -45,7 +45,7 @@ Inventory Tracker is a project created to get hands on experience with building 
 
 <img src="./images/authorize new users.png" style="zoom:50%;" />
 
-# Folder structure
+# Folder Structure
 
 ```java
 .
