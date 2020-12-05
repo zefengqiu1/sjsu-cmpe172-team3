@@ -141,6 +141,6 @@ Build with Maven:
 
 ## Links
 
-* [Web Application](https://ec2-3-220-67-171.compute-1.amazonaws.com)
+* [Web Application](http://ec2-3-220-67-171.compute-1.amazonaws.com)
 * [Video](https://www.youtube.com/watch?v=-8j8O_rk6ZQ&)
 
