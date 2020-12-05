@@ -104,6 +104,7 @@ To start the frontend:
     - npm run start
 
 *The program should be running on http://localhost:5000 if set up correctly
+
 ------------------
 
 Build with Maven:
