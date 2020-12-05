@@ -117,7 +117,7 @@ Build with Maven:
 
 *The program should be running on http://localhost:5000 if set up correctly
 
-# Diagram
+# Diagrams
 
 * System Diagram
 
